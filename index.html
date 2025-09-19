@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anton Petrov — Sound Designer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Inter', sans-serif;
+            line-height: 1.5;
+            color: #F2F4F7;
+            background-color: #111316;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 40px;
+            }
+        }
+
+        /* Top Bar */
+        .topbar {
+            background-color: #111316;
+            border-bottom: 1px solid #3A4048;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .topbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (min-width: 768px) {
+            .topbar-content {
+                padding: 0 40px;
+            }
+        }
+
+        .topbar-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #F2F4F7;
+        }
+
+        .topbar-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .topbar-links {
+                gap: 10px;
+            }
+        }
+
+        .topbar-link {
+            color: #5EB1FF;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .topbar-link:hover {
+            text-decoration: underline;
+        }
+
+        .topbar-link:focus {
+            outline: 2px solid #5EB1FF;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('Hero 1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-text h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #F2F4F7;
+        }
+
+        .hero-text .tagline {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #B9C0CA;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .ghost-button {
+            display: inline-block;
+            background-color: transparent;
+            color: #F2F4F7;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid #F2F4F7;
+            transition: all 0.3s ease;
+        }
+
+        .ghost-button:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .ghost-button:focus {
+            outline: 2px solid #5EB1FF;
+            outline-offset: 2px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 64px 0;
+            background-color: #111316;
+        }
+
+        @media (max-width: 768px) {
+            .about {
+                padding: 40px 0;
+            }
+        }
+
+        .about h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #F2F4F7;
+            font-weight: 600;
+        }
+
+        .about-contact {
+            padding: 64px 0;
+            background-color: #111316;
+        }
+
+        @media (max-width: 768px) {
+            .about-contact {
+                padding: 40px 0;
+            }
+        }
+
+        .about-contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .about-contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 20px;
+            }
+        }
+
+        .about-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 12px;
+            border: 1px solid #3A4048;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .about-photo {
+                width: 128px;
+                height: 128px;
+                margin: 0 auto;
+            }
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #B9C0CA;
+        }
+
+        .ukraine-note {
+            font-size: 14px;
+            color: #B9C0CA;
+            margin-top: 15px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .about-section h3 {
+            font-size: 24px;
+            color: #F2F4F7;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .contact-section h3 {
+            font-size: 24px;
+            color: #F2F4F7;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .contact-compact {
+            background-color: #1A1D21;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #3A4048;
+            max-width: 280px;
+        }
+
+        .contact-compact .contact-item {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .contact-compact .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-compact .contact-item strong {
+            color: #F2F4F7;
+            font-weight: 600;
+        }
+
+        .contact-compact .contact-item a {
+            color: #5EB1FF;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-compact .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-compact .contact-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Selected Contributions Section */
+        .contributions {
+            padding: 64px 0;
+            background-color: #1A1D21;
+        }
+
+        @media (max-width: 768px) {
+            .contributions {
+                padding: 40px 0;
+            }
+        }
+
+        .contributions h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #F2F4F7;
+            font-weight: 600;
+        }
+
+        .contributions-subline {
+            text-align: center;
+            font-size: 16px;
+            color: #B9C0CA;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 10px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .carousel-track::-webkit-scrollbar-track {
+            background: #3A4048;
+            border-radius: 2px;
+        }
+
+        .carousel-track::-webkit-scrollbar-thumb {
+            background: #5EB1FF;
+            border-radius: 2px;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(26, 29, 33, 0.9);
+            border: 1px solid #3A4048;
+            color: #F2F4F7;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            background-color: rgba(26, 29, 33, 1);
+            border-color: #5EB1FF;
+        }
+
+        .carousel-nav:focus {
+            outline: 2px solid #5EB1FF;
+            outline-offset: 2px;
+        }
+
+        .carousel-nav.prev {
+            left: -20px;
+        }
+
+        .carousel-nav.next {
+            right: -20px;
+        }
+
+        .carousel-nav:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: -10px;
+            right: 0;
+            background-color: #1A1D21;
+            color: #B9C0CA;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            border: 1px solid #3A4048;
+        }
+
+        .carousel-cta {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+
+        .contribution-item {
+            display: block;
+            background-color: #1A1D21;
+            color: #F2F4F7;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 1px solid #3A4048;
+            transition: all 0.2s ease;
+            overflow: hidden;
+            flex: 0 0 240px;
+            scroll-snap-align: start;
+        }
+
+        @media (max-width: 1024px) {
+            .contribution-item {
+                flex: 0 0 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contribution-item {
+                flex: 0 0 180px;
+            }
+        }
+
+        .contribution-item:hover {
+            background-color: #22262C;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .contribution-item:focus {
+            outline: 2px solid #5EB1FF;
+            outline-offset: 2px;
+        }
+
+        .contribution-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background-color: #3A4048;
+        }
+
+        @media (max-width: 1024px) {
+            .contribution-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contribution-image {
+                height: 180px;
+            }
+        }
+
+        .contribution-content {
+            padding: 20px;
+        }
+
+        .contribution-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #F2F4F7;
+            margin-bottom: 8px;
+        }
+
+        .contribution-label {
+            font-size: 14px;
+            color: #B9C0CA;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contributions-block {
+            margin-bottom: 60px;
+        }
+
+        .contributions-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .block-title {
+            font-size: 20px;
+            color: #F2F4F7;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .block-subline {
+            font-size: 14px;
+            color: #B9C0CA;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .video-demo-item {
+            position: relative;
+            display: block;
+            background-color: #1A1D21;
+            color: #F2F4F7;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 1px solid #3A4048;
+            transition: all 0.2s ease;
+            overflow: hidden;
+            flex: 0 0 360px;
+            scroll-snap-align: start;
+        }
+
+        @media (max-width: 1024px) {
+            .video-demo-item {
+                flex: 0 0 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-demo-item {
+                flex: 0 0 260px;
+            }
+        }
+
+        .video-demo-item:hover {
+            background-color: #22262C;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-demo-item:focus {
+            outline: 2px solid #5EB1FF;
+            outline-offset: 2px;
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #3A4048;
+        }
+
+        @media (max-width: 1024px) {
+            .video-thumbnail {
+                height: 170px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-thumbnail {
+                height: 150px;
+            }
+        }
+
+        .video-play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F2F4F7;
+            font-size: 24px;
+            border: 2px solid #F2F4F7;
+        }
+
+        .video-demo-content {
+            padding: 20px;
+        }
+
+        .video-demo-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #F2F4F7;
+            margin-bottom: 8px;
+        }
+
+        .video-demo-label {
+            font-size: 14px;
+            color: #B9C0CA;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Work Section */
+        .work {
+            padding: 64px 0;
+            background-color: #111316;
+        }
+
+        @media (max-width: 768px) {
+            .work {
+                padding: 40px 0;
+            }
+        }
+
+        .work h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #F2F4F7;
+            font-weight: 600;
+        }
+
+        .work-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .work-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 1024px) {
+            .work-buttons {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .work-buttons {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .work-button {
+            display: block;
+            background-color: transparent;
+            color: #F2F4F7;
+            padding: 20px 30px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid #F2F4F7;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .work-button:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .work-button:focus {
+            outline: 2px solid #5EB1FF;
+            outline-offset: 2px;
+        }
+
+        .work-caption {
+            text-align: center;
+            font-size: 14px;
+            color: #B9C0CA;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 64px 0;
+            background-color: #1A1D21;
+        }
+
+        @media (max-width: 768px) {
+            .contact {
+                padding: 40px 0;
+            }
+        }
+
+        .contact h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #F2F4F7;
+            font-weight: 600;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            background-color: #111316;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border: 1px solid #3A4048;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-item strong {
+            color: #F2F4F7;
+            font-weight: 600;
+        }
+
+        .contact-item a {
+            color: #5EB1FF;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-button {
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #111316;
+            color: #B9C0CA;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #3A4048;
+        }
+
+        .footer p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .footer .copyright {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .footer .legal-note {
+            font-size: 12px;
+            opacity: 0.5;
+            margin-top: 10px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-color: #3A4048;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #B9C0CA;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            background-color: #5EB1FF;
+            color: #111316;
+            transform: translateY(-2px);
+        }
+
+        .social-link:focus {
+            outline: 2px solid #5EB1FF;
+            outline-offset: 2px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .hero-text .tagline {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-contact h2,
+            .contributions h2,
+            .work h2 {
+                font-size: 28px;
+            }
+
+            .about-content p {
+                font-size: 16px;
+            }
+
+            .work-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .work-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* Accessibility */
+        .ghost-button:focus,
+        .work-link:focus,
+        .contribution-item:focus {
+            outline: 2px solid #5EB1FF;
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Go to Top Button */
+        .go-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #5EB1FF;
+            color: #111316;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(94, 177, 255, 0.3);
+        }
+
+        .go-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .go-to-top:hover {
+            background-color: #4A9EFF;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(94, 177, 255, 0.4);
+        }
+
+        .go-to-top:focus {
+            outline: 2px solid #F2F4F7;
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .go-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="topbar">
+        <div class="topbar-content">
+            <div class="topbar-name">Anton Petrov</div>
+            <div class="topbar-links">
+                <a href="#about" class="topbar-link">About</a>
+                <a href="#soundbanks" class="topbar-link">Soundbanks</a>
+                <a href="#videos" class="topbar-link">Demos</a>
+                <a href="#work" class="topbar-link">Links</a>
+                <a href="mailto:beavean@gmail.com" class="topbar-link">Email Me</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Anton Petrov</h1>
+                    <div class="tagline">Independent sound designer, creator of digital media content.<br><span style="font-size: 14px; color: #B9C0CA; font-style: italic; opacity: 0.8;">Sound design • Preset curation • Demos • 3D visualizations • QA for audio plug-ins</span></div>
+                    <div class="hero-buttons">
+                        <a href="mailto:beavean@gmail.com" class="ghost-button">Email me</a>
+                        <a href="#soundbanks" class="ghost-button">View my works</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About + Contact Section -->
+    <section class="about-contact" id="about">
+        <div class="container">
+            <div class="about-contact-content">
+                <!-- About Section -->
+                <div class="about-section">
+                    <h3>About</h3>
+                    <div class="about-content">
+                        <img src="Profile 1.jpg" alt="Anton Petrov — headshot" class="about-photo">
+                        <div>
+                            <p class="about-text">I craft modern, production-ready soundbanks and demo patches for leading software synths: Spire, Serum, Massive. My works are distributed across various platforms, including the <a href="https://reveal-sound.com/store/label/revealsound" target="_blank" rel="noopener noreferrer" style="color: #5EB1FF; text-decoration: none; font-weight: 600;">Reveal Sound Store</a>. I also create 3D visualizations for demos and product showcases.</p>
+                            <p style="font-size: 12px; color: #B9C0CA; margin-top: 15px; font-style: italic; opacity: 0.8;">Sound design • Preset curation • Demos • 3D visualizations • QA for audio plug-ins</p>
+                            <p class="ukraine-note">Originally from Ukraine.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="contact-section">
+                    <h3>Contact</h3>
+                    <div class="contact-compact">
+                        <div class="contact-item">
+                            <strong>Email:</strong> <a href="mailto:beavean@gmail.com">beavean@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Phone:</strong> <a href="tel:+380937657644">+38 093 765 76 44</a>
+                        </div>
+                        <div class="contact-button">
+                            <a href="mailto:beavean@gmail.com" class="ghost-button">Email me</a>
+                        </div>
+                        <div style="font-size: 14px; color: #B9C0CA; margin-top: 15px; text-align: center; font-style: italic;">Open to collaboration!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soundbanks Section -->
+    <section class="contributions" id="soundbanks">
+        <div class="container">
+            <h2>Soundbanks</h2>
+            <p class="contributions-subline">Core work: sound design, curation & QA</p>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="soundbanks-carousel">
+                        <a href="https://reveal-sound.com/store/product/The_Void" class="contribution-item" target="_blank" rel="noopener noreferrer">
+                            <img src="https://static.reveal-sound.com/store/product/The_Void/files/cover_540.png" alt="The Void soundbank cover" class="contribution-image">
+                            <div class="contribution-content">
+                                <div class="contribution-title">The Void</div>
+                            </div>
+                        </a>
+                        <a href="https://reveal-sound.com/store/product/Synthwave_Vol2" class="contribution-item" target="_blank" rel="noopener noreferrer">
+                            <img src="https://static.reveal-sound.com/store/product/Synthwave_Vol2/files/cover_540.png" alt="Synthwave Vol.2 soundbank cover" class="contribution-image">
+                            <div class="contribution-content">
+                                <div class="contribution-title">Synthwave Vol.2</div>
+                            </div>
+                        </a>
+                        <a href="https://reveal-sound.com/store/product/Into_The_Deep_Vol2" class="contribution-item" target="_blank" rel="noopener noreferrer">
+                            <img src="https://static.reveal-sound.com/store/product/Into_The_Deep_Vol2/files/cover_540.png" alt="Into The Deep Vol.2 soundbank cover" class="contribution-image">
+                            <div class="contribution-content">
+                                <div class="contribution-title">Into The Deep Vol.2</div>
+                            </div>
+                        </a>
+                        <a href="https://reveal-sound.com/store/product/Reveal_Sound_6In1_EDM_Bundle" class="contribution-item" target="_blank" rel="noopener noreferrer">
+                            <img src="https://static.reveal-sound.com/store/product/Reveal_Sound_6In1_EDM_Bundle/files/cover_540.png" alt="6-In-1 EDM Bundle soundbank cover" class="contribution-image">
+                            <div class="contribution-content">
+                                <div class="contribution-title">6-In-1 EDM Bundle</div>
+                            </div>
+                        </a>
+                        <a href="https://reveal-sound.com/store/product/Spire_Trance_Essentials_Vol2" class="contribution-item" target="_blank" rel="noopener noreferrer">
+                            <img src="https://static.reveal-sound.com/store/product/Spire_Trance_Essentials_Vol2/files/cover_540.png" alt="Spire Trance Essentials Vol.2 soundbank cover" class="contribution-image">
+                            <div class="contribution-content">
+                                <div class="contribution-title">Spire Trance Essentials Vol.2</div>
+                            </div>
+                        </a>
+                        <a href="https://reveal-sound.com/store/product/Spire_90s_Dance_Essentials" class="contribution-item" target="_blank" rel="noopener noreferrer">
+                            <img src="https://static.reveal-sound.com/store/product/Spire_90s_Dance_Essentials/files/cover_540.png" alt="Spire 90s Dance Essentials soundbank cover" class="contribution-image">
+                            <div class="contribution-content">
+                                <div class="contribution-title">Spire 90s Dance Essentials</div>
+                            </div>
+                        </a>
+                    </div>
+                    <button class="carousel-nav prev" aria-label="Previous soundbank" onclick="scrollCarousel('soundbanks-carousel', -1)">‹</button>
+                    <button class="carousel-nav next" aria-label="Next soundbank" onclick="scrollCarousel('soundbanks-carousel', 1)">›</button>
+                </div>
+        </div>
+    </section>
+
+    <!-- Video Demos Section -->
+    <section class="contributions" id="videos" style="padding-top: 0;">
+        <div class="container">
+            <h2>Demos & 3D Visuals</h2>
+            <p class="contributions-subline">Demo programming, curation & 3D visuals.</p>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="videos-carousel">
+                        <a href="https://youtu.be/mYc7DZfUBaQ?si=NZtr9vfWLWGP0Ngw" class="video-demo-item" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.youtube.com/vi/mYc7DZfUBaQ/maxresdefault.jpg" alt="YouTube demo thumbnail — SYNTHWAVE Vol.2" class="video-thumbnail">
+                            <div class="video-play-overlay">▶</div>
+                            <div class="video-demo-content">
+                                <div class="video-demo-title">SYNTHWAVE Vol.2</div>
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=dVjN2b4g74Y" class="video-demo-item" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.youtube.com/vi/dVjN2b4g74Y/maxresdefault.jpg" alt="YouTube demo thumbnail — Sean Tyas #Spire Vol.2" class="video-thumbnail">
+                            <div class="video-play-overlay">▶</div>
+                            <div class="video-demo-content">
+                                <div class="video-demo-title">Sean Tyas #Spire Vol.2</div>
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=DCoZlCELujo" class="video-demo-item" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.youtube.com/vi/DCoZlCELujo/maxresdefault.jpg" alt="YouTube demo thumbnail — INTO THE DEEP VOL.2" class="video-thumbnail">
+                            <div class="video-play-overlay">▶</div>
+                            <div class="video-demo-content">
+                                <div class="video-demo-title">INTO THE DEEP VOL.2</div>
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=9i9OnDN-nUc" class="video-demo-item" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.youtube.com/vi/9i9OnDN-nUc/maxresdefault.jpg" alt="YouTube demo thumbnail — Total Drum & Complex Fills Vol.2" class="video-thumbnail">
+                            <div class="video-play-overlay">▶</div>
+                            <div class="video-demo-content">
+                                <div class="video-demo-title">Total Drum & Complex Fills Vol.2</div>
+                            </div>
+                        </a>
+                    </div>
+                    <button class="carousel-nav prev" aria-label="Previous video demo" onclick="scrollCarousel('videos-carousel', -1)">‹</button>
+                    <button class="carousel-nav next" aria-label="Next video demo" onclick="scrollCarousel('videos-carousel', 1)">›</button>
+                </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="work" id="work">
+        <div class="container">
+            <h2>Links</h2>
+            <div class="work-content">
+                <div class="work-buttons">
+                    <div>
+                        <a href="https://reveal-sound.com/store/label/revealsound" class="work-button" target="_blank" rel="noopener noreferrer">
+                            Soundbanks
+                        </a>
+                        <p class="work-caption">Releases featuring my contributions.</p>
+                    </div>
+                    <div>
+                        <a href="https://www.youtube.com/@revealsound/videos" class="work-button" target="_blank" rel="noopener noreferrer">
+                            Demos & 3D Visuals
+                        </a>
+                        <p class="work-caption">Selected demos & 3D visuals.</p>
+                    </div>
+                    <div>
+                        <a href="mailto:beavean@gmail.com" class="work-button">
+                            Email Me
+                        </a>
+                        <p class="work-caption">I'm open for any collaboration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">© 2024 Anton Petrov</p>
+            <p class="legal-note">Product names are property of their respective owners.</p>
+        </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <button class="go-to-top" id="goToTop" aria-label="Go to top">
+        ↑
+    </button>
+
+    <script>
+        // Carousel functionality
+        function scrollCarousel(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const itemWidth = carousel.querySelector('.contribution-item, .video-demo-item').offsetWidth + 20; // width + gap
+            const scrollAmount = itemWidth * direction;
+            
+            carousel.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+            
+            updateCarouselCounter(carouselId);
+        }
+
+        function updateCarouselCounter(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const items = carousel.querySelectorAll('.contribution-item, .video-demo-item');
+            const containerWidth = carousel.offsetWidth;
+            const itemWidth = items[0].offsetWidth + 20;
+            const visibleItems = Math.floor(containerWidth / itemWidth);
+            const currentPosition = carousel.scrollLeft;
+            const currentItem = Math.round(currentPosition / itemWidth) + 1;
+            const totalItems = items.length;
+            
+            const counter = document.getElementById(carouselId.replace('-carousel', '-counter'));
+            if (counter) {
+                counter.textContent = `${Math.min(currentItem, totalItems)}/${totalItems}`;
+            }
+            
+            // Update navigation button states
+            const prevBtn = carousel.parentElement.querySelector('.prev');
+            const nextBtn = carousel.parentElement.querySelector('.next');
+            
+            if (prevBtn && nextBtn) {
+                prevBtn.disabled = currentPosition <= 0;
+                nextBtn.disabled = currentPosition >= carousel.scrollWidth - containerWidth;
+            }
+        }
+
+        // Go to top functionality
+        function initGoToTop() {
+            const goToTopButton = document.getElementById('goToTop');
+            
+            // Show/hide button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    goToTopButton.classList.add('visible');
+                } else {
+                    goToTopButton.classList.remove('visible');
+                }
+            });
+            
+            // Scroll to top when clicked
+            goToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Initialize carousels
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousels = ['soundbanks-carousel', 'videos-carousel'];
+            
+            carousels.forEach(carouselId => {
+                const carousel = document.getElementById(carouselId);
+                if (carousel) {
+                    // Update counter on scroll
+                    carousel.addEventListener('scroll', () => updateCarouselCounter(carouselId));
+                    
+                    // Keyboard navigation
+                    carousel.addEventListener('keydown', function(e) {
+                        if (e.key === 'ArrowLeft') {
+                            e.preventDefault();
+                            scrollCarousel(carouselId, -1);
+                        } else if (e.key === 'ArrowRight') {
+                            e.preventDefault();
+                            scrollCarousel(carouselId, 1);
+                        } else if (e.key === 'Home') {
+                            e.preventDefault();
+                            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                            updateCarouselCounter(carouselId);
+                        } else if (e.key === 'End') {
+                            e.preventDefault();
+                            carousel.scrollTo({ left: carousel.scrollWidth, behavior: 'smooth' });
+                            updateCarouselCounter(carouselId);
+                        }
+                    });
+                    
+                    // Make carousel focusable
+                    carousel.setAttribute('tabindex', '0');
+                    carousel.setAttribute('role', 'region');
+                    carousel.setAttribute('aria-label', carouselId === 'soundbanks-carousel' ? 'Soundbanks carousel' : 'Video demos carousel');
+                    
+                    // Initial counter update
+                    updateCarouselCounter(carouselId);
+                }
+            });
+            
+            // Initialize go to top button
+            initGoToTop();
+        });
+    </script>
+</body>
+</html>
